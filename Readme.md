@@ -25,10 +25,6 @@ Running the following command will serve the page locally:
 
 The page should then be reachable through [http://localhost:3000](http://localhost:3000)
 
-# Youtube
-
-Watch on Youtube:
-https://youtu.be/h2NNyulewNM
 
 # Note
 
