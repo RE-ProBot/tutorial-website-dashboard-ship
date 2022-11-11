@@ -1,0 +1,5 @@
+<svg id="icon" width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="48" height="48" rx="24" fill="#94A2FF" fill-opacity="0.2" />
+  <rect x="18.9822" y="14" width="10.4567" height="10.4567" rx="5.22835" stroke="#94A2FF" stroke-width="2" />
+  <path d="M18.0199 25.2417C15.9144 27.433 15.3413 28.8142 15.1511 31.4845C15.1511 37.1182 33.27 37.8795 33.27 31.4845C33.2076 28.7045 32.5689 27.3004 30.2502 25.2417" stroke="#94A2FF" stroke-width="2" stroke-linecap="round" />
+</svg>

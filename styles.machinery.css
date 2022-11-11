@@ -1,0 +1,163 @@
+.machinery {
+  --shade: var(--bg-default);
+  --connector: var(--fg-primary);
+  --status-bg: var(--bg-default);
+  --status-bd: var(--fg-primary);
+
+  --columns: 4;
+  --rows: 3;
+  --row-gap: 24;
+  --column-gap: 48;
+
+  position: relative;
+
+  display: grid;
+  grid-template-columns: repeat(
+    var(--columns), 1fr
+  );
+  grid-template-rows: repeat(
+    var(--rows), 1fr
+  );
+  column-gap: calc(
+    var(--column-gap) * 1px
+  );
+  row-gap: calc(
+    var(--row-gap) * 1px
+  );
+
+  background-color: transparent;
+}
+
+.fuel {
+  --width: 1;
+  --height: 2;
+  --x: 1;
+  --y: 1;
+}
+
+.electricity {
+  --width: 1;
+  --height: 2;
+  --x: 3;
+  --y: 1;
+}
+
+.freshwater {
+  --width: 1;
+  --height: 2;
+  --x: 4;
+  --y: 1;
+}
+
+.exhaust {
+  --width: 1;
+  --height: 1;
+  --x: 1;
+  --y: 3;
+}
+
+.turbines {
+  --width: 1;
+  --height: 3;
+  --x: 2;
+  --y: 1;
+}
+
+.machinery__block {
+  grid-column-start: var(--x);
+  grid-column-end: calc(
+    var(--x) + var(--width)
+  );
+  grid-row-start: var(--y);
+  grid-row-end: calc(
+    var(--y) + var(--height)
+  );
+
+  display: grid;
+  grid-auto-flow: row;
+  grid-template-rows: min-content;
+  grid-auto-rows: min-content;
+  align-content: space-between;
+  justify-content: center;
+  
+  border-radius: var(--bd-radius-md);
+  padding: var(--sp-base);
+
+  background: var(--bg-default);
+}
+
+.machinery__block header {
+  grid-template-columns: 1fr min-content;
+  column-gap: var(--sp-sm-3);
+}
+
+.machinery__block.header-only {
+  grid-template-rows: 1fr;
+}
+
+.machinery__block h2 {
+  font-weight: var(--fw-base);
+  font-size: var(--fs-base);
+  line-height: var(--lh-base);
+}
+
+.machinery__connectors {
+  grid-column: 1 / span var(--columns);
+  grid-row: 1 / span var(--rows);
+}
+
+.machinery__connector {
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  fill: none;
+}
+
+.machinery__connector.shade {
+  stroke-width: 20;
+  stroke: var(--shade);
+}
+
+.machinery__connector.main {
+  stroke-width: 8;
+  stroke: var(--connector);
+}
+
+.machinery__status {
+  --size: 28px;
+  --x: 0;
+  --y: 0;
+  --radius: calc(
+    var(--size) / 2
+  );
+  --transform:
+    translateX(
+      calc(var(--x) * 1px - var(--radius))
+    )
+    translateY(
+      calc(var(--y) * 1px - var(--radius))
+    );
+
+  position: absolute;
+
+  width: var(--size);
+  height: var(--size);
+  border-radius: 50%;
+
+  display: grid;
+  place-content: center;
+
+  background: var(--status-bg);
+  border: 1px solid var(--status-bd);
+
+  transform: var(--transform);
+
+  transition: var(--tr-default);
+}
+
+.machinery__status:hover {
+  transform: var(--transform) scale(1.3);
+}
+
+.machinery__status:active {
+  transform: var(--transform) scale(0.9);
+}

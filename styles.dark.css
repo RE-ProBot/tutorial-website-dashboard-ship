@@ -1,0 +1,85 @@
+body.theme-dark {
+  /* dark theme */
+  --bg-default-rgb: 78, 93, 112;
+  --bg-default: #4e5d70;
+  --bg-container: #3e4a59;
+  --bg-backdrop: #242a33;
+  --bg-backlight: #8eb1de;
+  --hi-primary: #45afff;
+  --hi-primary-dim: rgba(69, 175, 255, 0.4);
+  --hi-secondary: #94a2ff;
+  --fg-hi: #ffffff;
+  --fg-primary: #c3daf7;
+  --fg-muted: #a5bbd6;
+  --bd-default: #6c819c;
+  --fg-accent: #a5bbd6;
+  --hi-accent-backlight: #7badef;
+  
+  /* elevations */
+  --el-default: 0px 21px 34px -17px rgba(78, 93, 112, 1);
+  --el-right: -21px 0px 34px -10px rgba(78, 93, 112, 1);
+}
+
+body.theme-dark .elevated {
+  box-shadow: none;
+  outline: 1px solid var(--bd-default);
+}
+
+body.theme-dark .action {
+  outline: 1px solid var(--bd-default);
+}
+
+body.theme-dark .machinery {
+  --shade: #3e4a59;
+  --connector: #4e5d70;
+  --status-bg: #3e4a59;
+  --status-bd: #4e5d70;
+}
+
+body.theme-dark .map {
+  --map-url: url(
+    './assets/map/map-dark.svg'
+  );
+}
+
+body.theme-dark nav .logo {
+  --logo-url: url(
+    './assets/nav/logo-dark.svg'
+  );
+}
+
+body.theme-dark aside .backdrop {
+  --backdrop-url: url(
+    './assets/cabins/ocean-dark.svg'
+  );
+}
+
+body.theme-dark .level-0 {
+  stroke: #8EB1DE;
+}
+
+body.theme-dark .level-1 {
+  fill: #8EB1DE;
+  stroke: #8EB1DE;
+}
+
+body.theme-dark .level-2 {
+  fill: #8EB1DE;
+}
+
+body.theme-dark .level-3 {
+  fill: #7F9FC7;
+}
+
+body.theme-dark .base-0 {
+  fill: #3e4a59;
+  stroke: #6c819c;
+}
+
+body.theme-dark .needle-0 {
+  fill: #c3daf7;
+}
+
+body.theme-dark .needle-1 {
+  fill: #a5bbd6;
+}

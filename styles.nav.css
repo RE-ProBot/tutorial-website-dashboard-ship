@@ -1,0 +1,154 @@
+nav {
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+
+  padding: calc(2.5 * var(--sp-base));
+}
+
+nav .logo {
+  --logo-url: 
+    url('./assets/nav/logo-light.svg');
+  
+  width: 231px;
+  height: 64px;  
+  
+  background-image: var(--logo-url);
+}
+
+nav ul {
+  display: grid;
+  grid-auto-flow: row;
+  grid-auto-rows: max-content;
+  row-gap: var(--sp-base);
+}
+
+nav ul li {
+  display: grid;
+}
+
+nav ul li a {
+  display: grid;
+  grid-template-columns: 
+    max-content
+    max-content
+    1fr
+    max-content;
+  column-gap: var(--sp-base);
+
+  text-decoration: none;
+  color: var(--fg-secondary);
+
+  align-items: center;
+}
+
+nav ul li a::before {
+  --size: 4px;
+
+  content: '';
+
+  place-self: center;
+  display: block;
+
+  width: var(--size);
+  height: var(--size);
+  border-radius: 50%;
+
+  border: 1px solid var(--hi-secondary-dim);
+}
+
+nav ul li a.active::before {
+  background-color: var(--hi-secondary);
+}
+
+nav ul li a:hover::before {
+  background-color: var(--hi-secondary-dim);
+}
+
+nav ul li.spacer {
+  --width: 16px;
+  --gap: 10px;
+  --height: 1px;
+
+  position: relative;
+
+  grid-template-columns: 1fr;
+  place-self: center;
+
+  color: var(--fg-muted);
+  font-size: var(--fs-sm-2);
+  line-height: var(--lh-sm-2);
+  font-weight: var(--fw-sm-1);
+}
+
+nav ul li.spacer::before,
+nav ul li.spacer::after {
+  content: '';
+
+  position: absolute;
+
+  width: var(--width);
+  height: var(--height);
+  top: calc(
+    50% - var(--height) / 2
+  );
+
+  background: var(--fg-muted);
+  border-radius: 2px;
+}
+
+nav ul li.spacer::before {
+  left: calc(-1 * (
+    var(--width) + var(--gap)
+  ));
+}
+
+nav ul li.spacer::after {
+  right: calc(-1 * (
+    var(--width) + var(--gap)
+  ));
+}
+
+nav ul li a em {
+  --size: 20px;
+
+  display: grid;
+  place-content: center;
+
+  width: var(--size);
+  height: var(--size);
+  border: 1px solid var(--hi-secondary);
+  border-radius: 50%;
+
+  font-size: var(--fs-sm-1);
+  line-height: var(--lh-sm-1);
+  font-style: normal;
+  color: var(--hi-secondary);
+
+  background: var(--bg-default);
+}
+
+.user-menu {
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns:
+    max-content 1fr max-content;
+  column-gap: var(--sp-base);
+  grid-template-areas:
+    'avatar name menu'
+    'avatar title menu';
+}
+
+.user-menu .name {
+  grid-area: name;
+}
+
+.user-menu .avatar {
+  grid-area: avatar;
+}
+
+.user-menu .menu {
+  grid-area: menu;
+
+  place-self: center;
+}

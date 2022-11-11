@@ -1,0 +1,101 @@
+.progress-circle {
+  --width: 60;
+  --height: 60;
+  --line-width: 6;
+
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr;
+  place-self: center;
+
+  aspect-ratio: 1 / 1;
+  max-width: 100%;
+}
+
+.progress-circle.has-caption {
+  grid-template-columns: min-content 1fr;
+  grid-template-rows: min-content;
+  column-gap: var(--sp-sm-3);
+  place-self: stretch;
+
+  aspect-ratio: unset;
+}
+
+.progress-circle > * {
+  grid-column: 1 / span 1;
+  grid-row: 1 / span 1;
+}
+
+.progress-circle.size-small {
+  --width: 44;
+  --height: 44;
+  --line-width: 4;
+}
+
+.progress-circle.hi-primary {
+  --hi-color: var(--hi-primary);
+}
+
+.progress-circle.hi-secondary {
+  --hi-color: var(--hi-secondary);
+}
+
+.progress-circle .progress-circle-segment {
+  stroke: var(--hi-color);
+  stroke-linecap: round;
+  stroke-width: var(--line-width);
+
+  fill: none;
+
+  filter: drop-shadow(
+    0 0 2px var(--hi-color)
+  );
+}
+
+.progress-circle .progress-circle-bg {
+  stroke-width: var(--line-width);
+  stroke: var(--bd-default);
+  fill: none;
+}
+
+.progress-circle > .progress-label {
+  place-self: stretch;
+
+  display: grid;
+  place-content: center;
+  grid-auto-flow: row;
+  grid-auto-rows: min-content;
+  grid-auto-columns: min-content;
+
+  font-size: var(--fs-sm-1);
+  line-height: var(--lh-sm-1);
+  font-weight: var(--fw-lg);
+}
+
+.progress-label > .progress-text {
+  place-self: center;
+}
+
+.progress-label > .progress-unit {
+  place-self: center;
+
+  font-size: var(--fs-sm-2);
+  line-height: 1;
+  font-weight: var(--fw-base);
+
+  color: var(--fg-muted);
+}
+
+.progress-circle.size-small .progress-unit {
+  font-size: var(--fs-sm-3);
+}
+
+.progress-caption {
+  grid-column: 2;
+
+  place-self: center end;
+
+  font-size: var(--fs-sm-1);
+  line-height: var(--lh-sm-1);
+  font-weight: var(--fw-lg-1);
+}

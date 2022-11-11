@@ -1,0 +1,212 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: var(--fs-base);
+  font-family: var(--ff-default);
+  letter-spacing: 0.03em;
+}
+
+:root {
+  /* font-families */
+  --ff-default: "Poppins", sans-serif;
+  --ff-monospace: "Ubuntu Mono", monospace;
+
+  /* font-sizes & line-heights */
+  --fs-base: 16px;
+  --lh-base: 24px;
+
+  --fs-lg-1: 20px;
+  --lh-lg-1: 30px;
+
+  --fs-lg-2: 25px;
+  --lh-lg-2: 38px;
+
+  --fs-sm-1: 12.8px;
+  --lh-sm-1: 19px;
+
+  --fs-sm-2: 10px;
+  --lh-sm-2: 15px;
+
+  --fs-sm-3: 8px;
+  --lh-sm-3: 12px;
+
+  /* font weights */
+  --fw-sm-2: 200;
+  --fw-sm-1: 300;
+  --fw-base: 500;
+  --fw-lg-1: 600;
+
+  /* spacings */
+  --sp-base: 16px;
+
+  --sp-sm-3: calc(0.25 * var(--sp-base));
+  --sp-sm-2: calc(0.5 * var(--sp-base));
+  --sp-sm-1: calc(0.75 * var(--sp-base));
+  
+  --sp-lg-1: calc(1.25 * var(--sp-base));
+  --sp-lg-2: calc(1.5 * var(--sp-base));
+  --sp-lg-3: calc(1.75 * var(--sp-base));
+  --sp-lg-4: calc(2 * var(--sp-base));
+  
+  /* border-radius */
+  --bd-radius-xs: 4px;
+  --bd-radius-sm: 12px;
+  --bd-radius-md: 16px;
+  --bd-radius: 24px;
+  --bd-radius-lg: 40px;
+
+  /* elevations */
+  --el-default: 0px 21px 34px -17px rgba(69, 76, 79, 0.2);
+  --el-right: -21px 0px 34px -17px rgba(69, 76, 79, 0.2);
+
+  /* transitions */
+  --tr-default: 150ms ease-in-out;
+
+  /* default-theme */
+  --bg-default-rgb: 255, 255, 255;
+  --bg-default: #ffffff;
+  --bg-container: #eaf1f7;
+  --bg-backdrop: linear-gradient(301.13deg, #e9f2fa -5.89%, #ccdef0 118.27%);
+  --bg-backlight: #6197bf;
+  --hi-primary: #45afff;
+  --hi-primary-dim: rgba(69, 175, 255, 0.4);
+  --hi-secondary: #94a2ff;
+  --hi-secondary-dim: rgba(148, 162, 255, 0.4);
+  --fg-hi: #ffffff;
+  --fg-primary: #4e5d70;
+  --fg-muted: #a5bbd6;
+  --bd-default: #d8e1ed;
+  --fg-accent: #ffffff;
+  --hi-accent-backlight: var(--hi-primary);
+}
+
+body {
+  display: grid;
+  place-content: center;
+
+  min-height: 100vh;
+  overflow-y: auto;
+
+  background: var(--bg-backdrop);
+  color: var(--fg-primary);
+}
+
+main {
+  --width: calc(311px + 736px + 393px);
+  --backlight-width: 980px;
+  --backlight-accent-width: 332px;
+
+  position: relative;
+
+  display: grid;
+  place-content: stretch;
+
+  aspect-ratio: 16 / 9;
+  width: var(--width);
+  border-radius: var(--bd-radius-lg);
+
+  background: var(--bg-default);
+}
+
+main::before {
+  content: "";
+
+  position: absolute;
+  width: var(--backlight-width);
+  height: 246px;
+  left: 96px;
+  bottom: 8px;
+
+  background-color: var(--bg-backlight);
+
+  filter: blur(32px);
+  z-index: -1;
+
+  /* later for dark mode */
+  transition: var(--tr-default);
+  transition-property: background-color;
+}
+
+main::after {
+  content: "";
+
+  position: absolute;
+  width: var(--backlight-accent-width);
+  height: 246px;
+  right: 64px;
+  bottom: -12px;
+
+  background-color: 
+    var(--hi-accent-backlight);
+
+  filter: blur(32px);
+  z-index: -1;
+
+  /* later for dark mod */
+  transition: var(--tr-default);
+  transition-property: background-color;
+}
+
+.main-container {
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 6fr 15fr 8fr;
+
+  border-radius: var(--bd-radius-lg);
+  overflow: hidden;
+}
+
+article {
+  background-color: var(--bg-container);
+
+  display: grid;
+  grid-template-rows: min-content 1fr;
+  grid-template-columns: 1fr;
+  row-gap: calc(2.5 * var(--sp-base));
+
+  padding: calc(2.5 * var(--sp-base));
+}
+
+.dashboard {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(9, 1fr);
+  row-gap: calc(3 * var(--sp-base));
+  column-gap: var(--sp-lg-4);
+  grid-template-areas:
+    "map map map weather weather"
+    "map map map weather weather"
+    "map map map weather weather"
+    "map map map weather weather"
+    "map map map weather weather"
+    "machinery machinery machinery machinery machinery "
+    "machinery machinery machinery machinery machinery "
+    "machinery machinery machinery machinery machinery "
+    "machinery machinery machinery machinery machinery ";
+}
+
+section {
+  background: var(--bg-default);
+
+  border-radius: var(--bd-radius);
+}
+
+.elevated {
+  box-shadow: var(--el-default);
+}
+
+.map {
+  grid-area: map;
+}
+
+.weather {
+  grid-area: weather;
+}
+
+.machinery {
+  grid-area: machinery;
+}

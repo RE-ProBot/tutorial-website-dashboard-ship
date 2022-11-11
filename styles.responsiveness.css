@@ -1,0 +1,179 @@
+@media screen and (min-width: 1501px) {
+  #menu-toggle {
+    display: none;
+  }
+
+  .sidebar-toggle {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1500px) {
+  #menu-toggle {
+    display: none;
+  }
+
+  .sidebar-toggle {
+    display: none;
+  }
+
+  main {
+    --width: calc(311px + 454px + 393px);
+    
+    aspect-ratio: unset;
+  }
+
+  .main-container {
+    grid-template-columns:
+      311px 454px 393px;
+  }
+
+  .dashboard {
+    grid-template-rows: 4fr 5fr;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-areas: "map" "weather";
+  }
+
+  .machinery {
+    display: none;
+  }
+
+  .map .data {
+    background-color: rgba(
+      var(--bg-default-rgb), 0.75
+    );
+  }
+}
+
+@media screen and (max-width: 1230px) {
+  main {
+    --width: calc(454px + 393px);
+    --backlight-width: 375px;
+
+    position: relative;
+    aspect-ratio: unset;
+  }
+
+  .main-container {
+    position: relative;
+
+    overflow: hidden;
+    grid-template-columns: 454px 393px;
+  }
+
+  .dashboard {
+    grid-template-rows: 4fr 5fr;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-areas: "map" "weather";
+  }
+
+  nav {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+
+    padding-top: calc(7 * var(--sp-base));
+
+    background: var(--bg-default);
+
+    z-index: 3;
+
+    transform: translateX(-100%);
+
+    transition: var(--tr-default);
+    transition-property: transform;
+  }
+
+  #menu-toggle {
+    display: grid;
+
+    z-index: 3;
+  }
+
+  article > header {
+    grid-template-columns: max-content 1fr;
+  }
+
+  body.navbar-open nav {
+    transform: translateX(0);
+  }
+
+  .main-container::before {
+    content: '';
+
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 100%;
+
+    background: var(--bg-default);
+
+    opacity: 0;
+    z-index: 3;
+
+    transition: var(--tr-default);
+    transition-property: opacity;
+  }
+
+  body.navbar-open .main-container::before {
+    right: 0;
+    opacity: 0.6;
+  }
+}
+
+@media screen and (max-width: 950px) {
+  main {
+    position: relative;
+    --backlight-width: 275px;
+    --backlight-accent-width: 0px;
+    --width: 454px;
+  }
+
+  .main-container {
+    grid-template-columns: 1fr;
+  }
+
+  aside {
+    position: absolute;
+    top: 0;
+    right: -393px;
+    bottom: 0;
+
+    width: 393px;
+    border-left: 1px solid var(--bd-default);
+
+    box-shadow: none;
+
+    transition: var(--tr-default);
+    transition-property: right, box-shadow;
+  }
+
+  body.sidebar-open aside {
+    right: 0;
+    box-shadow: var(--el-right);
+  }
+
+  .sidebar-toggle {
+    display: grid;
+  }
+}
+
+@media screen and (max-width: 475px) {
+  body {
+    place-content: stretch;
+  }
+
+  main {
+    width: auto;
+    max-width: unset;
+    border-radius: unset;
+    aspect-ratio: unset;
+  }
+
+  .main-container {
+    overflow: hidden;
+    border-radius: unset;
+  }
+}

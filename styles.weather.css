@@ -1,0 +1,134 @@
+.weather {
+  display: grid;
+  grid-template-rows: 3fr 1fr;
+  grid-template-columns: 1fr min-content 1fr;
+}
+
+.weather > * {
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+
+  padding: 
+    var(--sp-lg-3) 
+    var(--sp-base);
+}
+
+.weather dl {
+  display: grid;
+  grid-auto-flow: row;
+  grid-auto-rows: 1fr;
+  row-gap: var(--sp-base);
+}
+
+.weather dt,
+.weather dd {
+  display: grid;
+  grid-auto-flow: column;
+  place-content: center;
+  column-gap: 0.5ch;
+}
+
+.weather dt {
+  margin-bottom: var(--sp-sm-2);
+}
+
+.weather dd small {
+  align-self: center;
+
+  color: var(--fg-muted);
+}
+
+.weather header {
+  display: grid;
+  place-content: center;
+  grid-template-columns: max-content;
+}
+
+.weather .spacer {
+  position: relative;
+
+  margin: var(--sp-lg-3) 0;
+  width: 1px;
+}
+
+.weather .spacer::before {
+  content: "";
+
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  top: calc(var(--lh-lg-1) / 2);
+
+  background-color: var(--fg-muted);
+}
+
+.weather .spacer::after {
+  content: "";
+
+  position: absolute;
+  width: 2px;
+  height: calc(5 * var(--sp-base));
+  bottom: calc(3 * var(--sp-base));
+  border-radius: 4px;
+
+  background-color: var(--bd-default);
+}
+
+.wind-direction--ne {
+  --wind-direction: 45deg;
+}
+
+.wind-direction--n-ne {
+  --wind-direction: 22.5deg;
+}
+
+.wind-direction {
+  transform: rotate(var(--wind-direction));
+}
+
+.weather em {
+  grid-column: span 3;
+
+  display: grid;
+  place-content: stretch;
+
+  padding: 0;
+  border-bottom-left-radius: var(--bd-radius);
+  border-bottom-right-radius: var(--bd-radius);
+
+  background-color: var(--hi-secondary);
+  color: var(--fg-hi);
+
+  font-style: normal;
+  font-weight: var(--fw-sm-1);
+
+  transition: var(--tr-default);
+  transition-property: box-shadow;
+}
+
+.weather em:hover {
+  box-shadow: inset 0 0 0 4px rgba(255, 255, 255, 0.4);
+}
+
+.weather em:active {
+  box-shadow: inset 0 0 0 8px rgba(255, 255, 255, 0.4);
+}
+
+.weather em a {
+  display: grid;
+  grid-template-columns: min-content 1fr;
+  grid-template-rows: repeat(2, min-content);
+  column-gap: var(--sp-base);
+  align-content: center;
+
+  padding: 0 var(--sp-lg-4);
+
+  color: var(--fg-hi);
+  text-decoration: none;
+}
+
+.weather em a .icon {
+  grid-row: span 2;
+}

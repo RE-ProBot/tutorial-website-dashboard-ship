@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ship Management Dashboard</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" type="text/css" href="./styles.base.css" />
+  <link rel="stylesheet" type="text/css" href="./styles.elements.css" />
+  <link rel="stylesheet" type="text/css" href="./styles.weather.css" />
+  <link rel="stylesheet" type="text/css" href="./styles.map.css" />
+  <link rel="stylesheet" type="text/css" href="./styles.machinery.css" />
+  <link rel="stylesheet" type="text/css" href="./styles.progress-circle.css" />
+  <link rel="stylesheet" type="text/css" href="./styles.cabins.css" />
+  <link rel="stylesheet" type="text/css" href="./styles.nav.css" />
+  <link rel="stylesheet" type="text/css" href="./styles.dark.css" />
+  <link rel="stylesheet" type="text/css" href="./styles.responsiveness.css" />
+</head>
+
+<body class="theme-dark">
+  <main>
+    <div class="main-container">
+      <nav>
+        <div class="logo"></div>
+
+        <ul class="nav-items">
+          <li>
+            <a href="#" class="active">
+              <svg width="24" height="24">
+                <use href="./assets/nav/House.svg#icon" />
+              </svg>
+              Home
+            </a>
+          </li>
+
+          <li class="spacer">Operations</li>
+          <li>
+            <a href="#">
+              <svg width="24" height="24">
+                <use href="./assets/nav/Book.svg#icon" />
+              </svg>
+              Log Book
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <svg width="24" height="24">
+                <use href="./assets/nav/Compass.svg#icon" />
+              </svg>
+              Navigation
+            </a>
+          </li>
+
+          <li class="spacer">Passengers</li>
+          <li>
+            <a href="#">
+              <svg width="24" height="24">
+                <use href="./assets/nav/Books.svg#icon" />
+              </svg>
+              Manifest
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <svg width="24" height="24">
+                <use href="./assets/nav/Shield.svg#icon" />
+              </svg>
+              Incidents
+              <em>2</em>
+            </a>
+          </li>
+          
+          <li class="spacer">Procurement</li>
+          <li>
+            <a href="#">
+              <svg width="24" height="24">
+                <use href="./assets/nav/Package.svg#icon" />
+              </svg>
+              Supplies
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <svg width="24" height="24">
+                <use href="./assets/nav/Wrench.svg#icon" />
+              </svg>
+              Engineering
+            </a>
+          </li>
+          
+          <li class="spacer">Personal</li>
+          <li>
+            <a href="#">
+              <svg width="24" height="24">
+                <use href="./assets/nav/GearSix.svg#icon" />
+              </svg>
+              Settings
+            </a>
+          </li>
+          
+        </ul>
+
+        <div class="user-menu">
+          <svg class="avatar" width="48" height="48">
+            <use href="./assets/nav/avatar.svg#icon" />
+          </svg>
+
+          <div class="name">Jessica Stone</div>
+          <small class="title">First Mate</small>
+
+          <svg class="menu" width="20" height="36">
+            <use href="./assets/nav/menu.svg#icon" />
+          </svg>
+        </div>
+      </nav>
+      <article>
+        <header>
+          <a class="action" id="menu-toggle" href="#">
+            <svg width="24" height="24">
+              <use href="./assets/icons/Menu.svg#icon" />
+            </svg>
+          </a>
+          <h1>Dashboard</h1>
+          <a class="action" id="theme-toggle" href="#">
+            <svg width="24" height="24">
+              <use href="./assets/icons/Lightbulb.svg#icon" />
+            </svg>
+          </a>
+          <a class="action" href="#">
+            <svg width="24" height="24">
+              <use href="./assets/icons/BellSimple.svg#icon" />
+            </svg>
+          </a>
+          <a class="action sidebar-toggle" href="#">
+            <svg width="24" height="24">
+              <use href="./assets/icons/StackSimple.svg#icon" />
+            </svg>
+          </a>
+        </header>
+
+        <div class="dashboard">
+          <section class="map elevated">
+            <div class="map-container">
+            </div>
+            <div class="compass elevated" style="--value: 40;">
+              <svg width="100%" height="100%">
+                <use href="./assets/map/compass.svg#compass" />
+                <g class="compass__needle">
+                  <path
+                    d="M27.4387 28.6838L31.0513 17.846C31.3552 16.9344 32.6448 16.9344 32.9487 17.846L36.5613 28.6838C36.7771 29.3313 36.2951 30 35.6126 30H28.3874C27.7049 30 27.2229 29.3313 27.4387 28.6838Z"
+                    fill="#4E5D70" class="needle-0" />
+                  <path
+                    d="M36.5613 35.3162L32.9487 46.1539C32.6448 47.0656 31.3552 47.0656 31.0513 46.1539L27.4387 35.3162C27.2229 34.6687 27.7049 34 28.3874 34L35.6126 34C36.2951 34 36.7771 34.6687 36.5613 35.3162Z"
+                    fill="#A5BBD6" class="needle-1" />
+                </g>
+              </svg>
+            </div>
+            <div class="data elevated">
+              <dl>
+                <dt>
+                  <svg width="20" height="20">
+                    <use href="./assets/icons/MapPin.svg#icon" />
+                  </svg>
+                </dt>
+                <dd>
+                  <data>
+                    49° 24' 54.2" N
+                  </data>
+                  <data>
+                    &nbsp;8° 39' 22.5" E
+                  </data>
+                </dd>
+                <dt>
+                  <svg width="20" height="20">
+                    <use href="./assets/icons/Gauge.svg#icon" />
+                  </svg>
+                </dt>
+                <dd>
+                  20 <small class="text--muted">
+                    kn
+                  </small>
+                </dd>
+              </dl>
+            </div>
+          </section>
+          <section class="weather elevated">
+            <div>
+              <header>
+                <h2>Now</h2>
+              </header>
+              <dl>
+                <div>
+                  <dt title="Sunny">
+                    <svg width="32" height="32">
+                      <use href="./assets/weather/SunDim.svg#icon" />
+                    </svg>
+                  </dt>
+                  <dd>
+                    24 <small>°C</small>
+                  </dd>
+                </div>
+
+                <div>
+                  <dt title="Wind">
+                    <svg width="32" height="32" class="wind-direction wind-direction--ne">
+                      <use href="./assets/weather/NavigationArrow.svg#icon" />
+                    </svg>
+                  </dt>
+                  <dd>
+                    3 <small>kn</small>
+                  </dd>
+                </div>
+              </dl>
+            </div>
+
+            <div class="spacer"></div>
+
+            <div>
+              <header>
+                <h2>+3h</h2>
+              </header>
+              <dl>
+                <div>
+                  <dt title="Partially Cloudy">
+                    <svg width="32" height="32">
+                      <use href="./assets/weather/CloudMoon.svg#icon" />
+                    </svg>
+                  </dt>
+                  <dd>
+                    22 <small>°C</small>
+                  </dd>
+                </div>
+
+                <div>
+                  <dt title="Wind">
+                    <svg width="32" height="32" class="wind-direction wind-direction--n-ne">
+                      <use href="./assets/weather/NavigationArrow.svg#icon" />
+                    </svg>
+                  </dt>
+                  <dd>
+                    5 <small>kn</small>
+                  </dd>
+                </div>
+              </dl>
+            </div>
+
+            <em>
+              <a href="#">
+                <svg width="32" height="32" class="icon">
+                  <use href="./assets/icons/warning.svg#icon" />
+                </svg>
+
+                <p>Storm ahead</p>
+                <small>Learn more</small>
+              </a>
+            </em>
+          </section>
+          <section class="machinery">
+            <div class="machinery__block elevated fuel">
+              <header>
+                <h2>Fuel</h2>
+              </header>
+              <div class="progress-circle size-default hi-primary" style="--value: 80;">
+                <svg width="0" height="0" viewBox="0 0 0 0">
+                  <circle class="progress-circle-bg" cx="0" cy="0" r="0" />
+                  <path class="progress-circle-segment" />
+                </svg>
+                <div class="progress-label">
+                  <span class="progress-text">
+                    0
+                  </span>
+                  <span class="progress-unit">
+                    %
+                  </span>
+                </div>
+              </div>
+              <dl class="inline">
+                <dt>
+                  <svg width="20" height="20">
+                    <use href="./assets/icons/Fire.svg#icon" />
+                  </svg>
+                </dt>
+                <dd>
+                  <small>500</small>
+                  <small class="text--muted">
+                    gal/h
+                  </small>
+                </dd>
+              </dl>
+            </div>
+            
+            <div class="machinery__block elevated exhaust header-only">
+              <header>
+                <h2>Exhaust</h2>
+                <svg width="20" height="20">
+                  <use href="./assets/icons/Wind.svg#icon" />
+                </svg>
+              </header>
+            </div>
+
+            <div class="machinery__block elevated turbines">
+              <header>
+                <h2>Turbines</h2>
+              </header>
+              <div class="progress-circle size-default hi-secondary" style="--value: 80;">
+                <svg width="0" height="0" viewBox="0 0 0 0">
+                  <circle class="progress-circle-bg" cx="0" cy="0" r="0" />
+                  <path class="progress-circle-segment" />
+                </svg>
+                <div class="progress-label">
+                  <span class="progress-text">
+                    0
+                  </span>
+                  <span class="progress-unit">
+                    %
+                  </span>
+                </div>
+              </div>
+              
+              <div class="progress-circle size-small has-caption hi-secondary" style="--value: 30;">
+                <svg width="0" height="0" viewBox="0 0 0 0">
+                  <circle class="progress-circle-bg" cx="0" cy="0" r="0" />
+                  <path class="progress-circle-segment" />
+                </svg>
+                <div class="progress-label">
+                  <span class="progress-text">
+                    0
+                  </span>
+                  <span class="progress-unit">
+                    %
+                  </span>
+                </div>
+                <div class="progress-caption">
+                  1.2 
+                  <small class="text--muted">
+                    GW
+                  </small>
+                </div>
+              </div>
+
+              <div class="progress-circle size-small has-caption hi-secondary" style="--value: 75;">
+                <svg width="0" height="0" viewBox="0 0 0 0">
+                  <circle class="progress-circle-bg" cx="0" cy="0" r="0" />
+                  <path class="progress-circle-segment" />
+                </svg>
+                <div class="progress-label">
+                  <span class="progress-text">
+                    0
+                  </span>
+                  <span class="progress-unit">
+                    %
+                  </span>
+                </div>
+                <div class="progress-caption">
+                  1.9 
+                  <small class="text--muted">
+                    GW
+                  </small>
+                </div>
+              </div>
+            </div>
+
+            <div class="machinery__block elevated electricity">
+              <header>
+                <h2>Electricity</h2>
+              </header>
+              <div class="progress-circle size-default hi-secondary" style="--value: 65;">
+                <svg width="0" height="0" viewBox="0 0 0 0">
+                  <circle class="progress-circle-bg" cx="0" cy="0" r="0" />
+                  <path class="progress-circle-segment" />
+                </svg>
+                <div class="progress-label">
+                  <span class="progress-text">
+                    0
+                  </span>
+                  <span class="progress-unit">
+                    %
+                  </span>
+                </div>
+              </div>
+              <dl class="inline">
+                <dt>
+                  <svg width="20" height="20">
+                    <use href="./assets/icons/Lightning.svg#icon" />
+                  </svg>
+                </dt>
+                <dd>
+                  <small>2.3</small>
+                  <small class="text--muted">
+                    GW
+                  </small>
+                </dd>
+              </dl>
+            </div>
+
+            <div class="machinery__block elevated freshwater">
+              <header>
+                <h2>Freshwater</h2>
+              </header>
+              <div class="progress-circle size-default hi-primary" style="--value: 30;">
+                <svg width="0" height="0" viewBox="0 0 0 0">
+                  <circle class="progress-circle-bg" cx="0" cy="0" r="0" />
+                  <path class="progress-circle-segment" />
+                </svg>
+                <div class="progress-label">
+                  <span class="progress-text">
+                    0
+                  </span>
+                  <span class="progress-unit">
+                    %
+                  </span>
+                </div>
+              </div>
+              <dl class="inline">
+                <dt>
+                  <svg width="20" height="20">
+                    <use href="./assets/icons/Drop.svg#icon" />
+                  </svg>
+                </dt>
+                <dd>
+                  <small>5.524</small>
+                  <small class="text--muted">
+                    ltr
+                  </small>
+                </dd>
+              </dl>
+            </div>
+
+            <template id="status-ok-template">
+              <a href="#" class="machinery__status">
+                <svg width="18" height="18" fill="none">
+                  <rect x="0" y="0" width="18" height="18" fill="none" stroke="none" />
+                  <path d="M15.1875 5.06284L7.3125 12.9375L3.375 9.00034" stroke="#21F45C" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </a>
+            </template>
+            <template id="status-warning-template">
+              <a href="#" class="machinery__status machinery__status--warning">
+                <svg width="18" height="18" fill="none">
+                  <rect x="0" y="0" width="18" height="18" fill="none" stroke="none" />
+                  <path d="M9 6.3125V9.125" stroke="#FB743E" stroke-width="1.125" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                  <path
+                    d="M8.02638 1.81143L1.84055 12.4984C1.74157 12.6694 1.68937 12.8634 1.68921 13.061C1.68905 13.2586 1.74092 13.4528 1.83962 13.6239C1.93832 13.7951 2.08036 13.9372 2.25144 14.0361C2.42253 14.1349 2.61663 14.187 2.81421 14.187H15.1859C15.3835 14.187 15.5776 14.1349 15.7486 14.0361C15.9197 13.9372 16.0618 13.7951 16.1605 13.6239C16.2592 13.4528 16.311 13.2586 16.3109 13.061C16.3107 12.8634 16.2585 12.6694 16.1595 12.4984L9.9737 1.81143C9.87487 1.64069 9.7329 1.49895 9.562 1.40041C9.39111 1.30187 9.19731 1.25 9.00004 1.25C8.80277 1.25 8.60897 1.30187 8.43808 1.40041C8.26718 1.49895 8.12521 1.64069 8.02638 1.81143V1.81143Z"
+                    stroke="#FB743E" stroke-width="1.125" stroke-linecap="round" stroke-linejoin="round" />
+                  <path
+                    d="M9 12.5C9.46599 12.5 9.84375 12.1222 9.84375 11.6562C9.84375 11.1903 9.46599 10.8125 9 10.8125C8.53401 10.8125 8.15625 11.1903 8.15625 11.6562C8.15625 12.1222 8.53401 12.5 9 12.5Z"
+                    fill="#FB743E" />
+                </svg>
+              </a>
+            </template>
+
+            <svg height="100%" width="100%" class="machinery__connectors">
+              <defs>
+                <path id="connection-template" class="machinery__connector main" />
+                <path id="connection-shade-template" class="machinery__connector shade" />
+              </defs>
+              <g class="machinery__connections">
+
+              </g>
+            </svg>
+          </section>
+        </div>
+      </article>
+      <aside>
+        <div class="backdrop" width="393" height="810"></div>
+
+        <div class="container">
+          <header>
+            <h1>Cabin Status</h1>
+            <a class="action" href="#">
+              <svg width="24" height="24">
+                <use href="./assets/icons/TreeStructure.svg#icon" />
+              </svg>
+            </a>
+            <a class="action sidebar-toggle" href="#">
+              <svg width="24" height="24">
+                <use href="./assets/icons/StackSimple.svg#icon" />
+              </svg>
+            </a>
+          </header>
+
+          <div class="level-selection">
+            <svg width="299" height="82" viewBox="0 0 299 82" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect class="level-0" x="66.5" y="37.5" width="224" height="11" rx="5.5" stroke="white" />
+              <rect class="level-1" x="83.5" y="18.5" width="201" height="11" rx="5.5" fill="white" fill-opacity="0.8"
+                stroke="white" />
+              <rect class="level-0" x="117.5" y="0.5" width="54" height="11" rx="5.5" stroke="white" />
+              <rect class="level-0" x="197.5" y="0.5" width="54" height="11" rx="5.5" stroke="white" />
+              <path
+                d="M74 82C41.5 82 9 64.5 0 53C1.88974 48.9046 4.15441 47.6508 10 47H55C62.5 47 62.6621 52.6518 68.4375 53H158.625H295C297.209 53 299 54.7909 299 57V78C299 80.2091 297.209 82 295 82H74Z"
+                fill="white" class="level-2" />
+              <path
+                d="M107 79C97.2229 63.1705 69.6716 62.9476 59.0616 52.4966C57.6189 51.0755 55.7794 50 53.7543 50H7.99989C6 50 4.35473 51.471 4.49989 53.5C18.4999 63.5 44.9999 79 76.4999 79H107Z"
+                fill="#E5F1F6" class="level-3" />
+              <path
+                d="M282.5 56C275.217 56 253.318 66.844 252.057 78.0018C251.995 78.5506 252.448 79 253 79H294C295.105 79 296 78.1046 296 77V58C296 56.8954 295.105 56 294 56H282.5Z"
+                fill="#E5F1F6" class="level-3" />
+            </svg>
+          </div>
+
+          <div class="ship">
+            <svg class="ship__base" width="117" height="449" viewBox="0 0 117 449">
+              <path class="base-0"
+                d="M2 433.114V118.749C1.99999 86.4525 10.8959 57.0944 22.5484 35.8501C28.3761 25.2255 34.8596 16.6917 41.2032 10.8426C47.6015 4.9429 53.6063 2 58.5 2C63.3937 2 69.3985 4.9429 75.7969 10.8426C82.1404 16.6917 88.6239 25.2255 94.4516 35.8501C106.104 57.0944 115 86.4525 115 118.749V433C115 440.732 108.732 447 101 447H16C8.24936 447 2 440.827 2 433.114Z"
+                fill="white" stroke="#E0F2FF" stroke-width="4" />
+            </svg>
+
+            <div class="ship__cabins">
+              <template id="cabin-template">
+                <a href="#" class="ship__cabin"></a>
+              </template>
+            </div>
+
+            <div class="ship__panel">
+              <dl>
+                <dt>
+                  <svg width="32" height="32">
+                    <use href="./assets/icons/StarHalf.svg#icon" />
+                  </svg>
+                </dt>
+                <dd>Premium</dd>
+                <dt>
+                  <svg width="32" height="32">
+                    <use href="./assets/icons/SquareHalf.svg#icon" />
+                  </svg>
+                </dt>
+                <dd>
+                  20&nbsp;
+                  <span class="unit">
+                    m²
+                  </span>
+                </dd>
+                <dt>
+                  <svg width="32" height="32">
+                    <use href="./assets/icons/Bed.svg#icon" />
+                  </svg>
+                </dt>
+                <dd>
+                  2&nbsp;
+                  <span class="unit">
+                    Beds
+                  </span>
+                </dd>
+                <dt>
+                  <svg width="32" height="32">
+                    <use href="./assets/icons/ShieldCheck.svg#icon" />
+                  </svg>
+                </dt>
+                <dd>
+                  OK
+                </dd>
+              </dl>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <script type="module" src="./app.js"></script>
+</body>
+
+</html>

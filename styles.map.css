@@ -1,0 +1,59 @@
+.map {
+  --map-url: 
+    url('./assets/map/map-light.svg');
+
+  position: relative;
+
+  display: grid;
+}
+
+.map-container {
+  border-radius: var(--bd-radius);
+  background-image: var(--map-url);
+  background-size: cover;
+}
+
+.map .compass {
+  position: absolute;
+  top: var(--sp-lg-4);
+  right: var(--sp-lg-4);
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+
+  background: var(--bg-default);
+}
+
+.map .compass__needle {
+  transform-origin: center;
+  transform: 
+    rotate(calc(var(--value) * 1deg));
+}
+
+.map .data {
+  position: absolute;
+  bottom: var(--sp-base);
+  right: var(--sp-base);
+
+  padding: var(--sp-base);
+  border-radius: var(--bd-radius-md);
+
+  background: var(--bg-default);
+}
+
+.map .data dl {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  grid-auto-rows: max-content;
+  grid-auto-flow: row dense;
+  column-gap: 1ch;
+  row-gap: var(--sp-sm-2);
+}
+
+.map data {
+  display: block;
+
+  font-family: var(--ff-monospace);
+  line-height: 1.2;
+  font-size: 1.1rem;
+}

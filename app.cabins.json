@@ -1,0 +1,113 @@
+[
+  {
+    "x": 0,
+    "y": 0,
+    "width": 3,
+    "type": "premium",
+    "area": 60,
+    "beds": 3
+  },
+  {
+    "x": 0,
+    "y": 1,
+    "type": "premium",
+    "unavailable": true,
+    "area": 20,
+    "beds": 3
+  },
+  {
+    "x": 1,
+    "y": 1,
+    "type": "premium",
+    "area": 20,
+    "beds": 1
+  },
+  {
+    "x": 2,
+    "y": 1,
+    "type": "premium",
+    "area": 20,
+    "beds": 1
+  },
+  {
+    "x": 0,
+    "y": 2,
+    "height": 2,
+    "type": "business",
+    "unavailable": true,
+    "area": 40
+  },
+  {
+    "x": 1,
+    "y": 2,
+    "type": "business",
+    "area": 20
+  },
+  {
+    "x": 2,
+    "y": 2,
+    "height": 2,
+    "type": "business",
+    "area": 40
+  },
+  {
+    "x": 0,
+    "y": 4,
+    "type": "economy",
+    "area": 20
+  },
+  {
+    "x": 1,
+    "y": 4,
+    "type": "economy",
+    "unavailable": true,
+    "area": 20
+  },
+  {
+    "x": 2,
+    "y": 4,
+    "type": "economy",
+    "area": 20
+  },
+  {
+    "x": 0,
+    "y": 5,
+    "type": "economy",
+    "unavailable": true,
+    "area": 20
+  },
+  {
+    "x": 1,
+    "y": 5,
+    "type": "economy",
+    "unavailable": true,
+    "area": 20
+  },
+  {
+    "x": 2,
+    "y": 5,
+    "type": "economy",
+    "area": 20
+  },
+  {
+    "x": 0,
+    "y": 6,
+    "height": 2,
+    "type": "premium",
+    "area": 40
+  },
+  {
+    "x": 1,
+    "y": 7,
+    "type": "premium",
+    "area": 20
+  },
+  {
+    "x": 2,
+    "y": 6,
+    "height": 2,
+    "type": "premium",
+    "unavailable": true,
+    "area": 40
+  }
+]

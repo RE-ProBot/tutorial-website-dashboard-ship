@@ -1,0 +1,132 @@
+{
+  "connections": [
+    {
+      "waypoints": [
+        {
+          "x": 1,
+          "sideX": 1,
+          "gapX": 0,
+          "y": 1,
+          "sideY": 1,
+          "gapY": 1
+        },
+        {
+          "x": 2,
+          "sideX": -1,
+          "gapX": 0,
+          "y": 1,
+          "sideY": 1,
+          "gapY": 1
+        }
+      ],
+      "statuses": [
+        {
+          "x": 1,
+          "sideX": 1,
+          "gapX": 1,
+          "y": 3,
+          "type": "warning"
+        }
+      ]
+    },
+    {
+      "waypoints": [
+        {
+          "x": 1,
+          "sideX": 1,
+          "gapX": 0,
+          "y": 3,
+          "sideY": 0,
+          "gapY": 0
+        },
+        {
+          "x": 2,
+          "sideX": -1,
+          "gapX": 0,
+          "y": 3,
+          "sideY": 0,
+          "gapY": 0
+        }
+      ],
+      "statuses": [
+        {
+          "x": 1,
+          "sideX": 1,
+          "gapX": 1,
+          "y": 1,
+          "sideY": 1,
+          "gapY": 1,
+          "type": "ok"
+        }
+      ]
+    },
+    {
+      "waypoints": [
+        {
+          "x": 2,
+          "sideX": 1,
+          "gapX": 0,
+          "y": 3,
+          "sideY": 0,
+          "gapY": 0
+        },
+        {
+          "x": 3,
+          "sideX": 0,
+          "gapX": 0,
+          "y": 3,
+          "sideY": 0,
+          "gapY": 0
+        },
+        {
+          "x": 3,
+          "sideX": 0,
+          "gapX": 0,
+          "y": 2,
+          "sideY": 1,
+          "gapY": 0
+        },
+        {
+          "x": 3,
+          "sideX": 0,
+          "gapX": 0,
+          "y": 3,
+          "sideY": 0,
+          "gapY": 0
+        },
+        {
+          "x": 4,
+          "sideX": 0,
+          "gapX": 0,
+          "y": 3,
+          "sideY": 0,
+          "gapY": 0
+        },
+        {
+          "x": 4,
+          "sideX": 0,
+          "gapX": 0,
+          "y": 2,
+          "sideY": 1,
+          "gapY": 0
+        }
+      ],
+      "statuses": [
+        {
+          "x": 3,
+          "y": 3,
+          "sideY": -1,
+          "gapY": 0,
+          "type": "ok"
+        },
+        {
+          "x": 4,
+          "y": 3,
+          "sideY": -1,
+          "gapY": 0,
+          "type": "ok"
+        }
+      ]
+    }
+  ]
+}
